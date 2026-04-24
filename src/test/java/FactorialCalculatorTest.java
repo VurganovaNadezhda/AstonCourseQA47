@@ -1,13 +1,17 @@
 import org.example.FactorialCalculator;
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.CsvSource;
+import org.junit.jupiter.api.Test;
+import org.testng.annotations.DataProvider;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class FactorialCalculatorTest {
-    @ParameterizedTest
-    @CsvSource({"0,1", "3,6", "5,120"})
-    void testFactorial(int n, long expected) {
-        assertEquals(expected, FactorialCalculator.factorial(n));
+public class FactorialCalculatorTest {
+    @DataProvider(name = "factorialData")
+    public Object[][] factorialData() {
+        return new Object[][] {{0,1L}, {3,6L}, {5,120L}};
+    }
+
+    @Test(dataProvider = "factorialData")
+    public void testFactorial(int n, long expected) {
+        assertEquals(FactorialCalculator.factorial(n), expected);
     }
 }
