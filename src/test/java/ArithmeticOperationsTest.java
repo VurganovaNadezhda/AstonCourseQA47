@@ -1,8 +1,9 @@
 import org.example.ArithmeticOperations;
-import org.junit.jupiter.api.Test;
+import org.testng.annotations.Test;
 import org.testng.annotations.DataProvider;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.testng.Assert.*;
+
 
 public class ArithmeticOperationsTest {
     @DataProvider(name = "addData")

@@ -1,10 +1,10 @@
 
 import org.example.TriangleAreaCalculator;
-import org.junit.jupiter.api.Test;
+import org.testng.annotations.Test;
 import org.testng.annotations.DataProvider;
 import static org.testng.Assert.*;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+
 
 public class TriangleAreaCalculatorTest {
     @DataProvider(name = "areaData")
